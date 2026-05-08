@@ -1,0 +1,22 @@
+module STA_BetterHutches
+{
+    imports
+    {
+        Base
+    }
+
+    item WoodchipsBag
+    {
+        DisplayCategory = Material,
+        ItemType = base:drainable,
+        Weight = 4.0,
+        Icon = Sandbag,
+        ReplaceInPrimaryHand = Bag_Sandbag_RHand holdingbagright,
+        ReplaceInSecondHand = Bag_Sandbag_LHand holdingbagleft,
+        ReplaceOnDeplete = Base.EmptySandbag,
+        Tooltip = Tooltip_item_empty_sack_container,
+        UseDelta = 0.25,
+        UseWhileEquipped = false,
+        WorldStaticModel = SandBag,
+    }
+}

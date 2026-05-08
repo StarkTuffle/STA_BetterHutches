@@ -1,0 +1,13 @@
+VERSION = 1,
+
+option STA_BetterHutches.WoodchipsBagAmount
+{
+    type = integer, min = 1, max = 100, default = 4,
+    page = STA_BetterHutches, translation = STA_BetterHutches_WoodchipsBagAmount,
+}
+
+option STA_BetterHutches.DirtinessReduction
+{
+    type = integer, min = 1, max = 100, default = 10,
+    page = STA_BetterHutches, translation = STA_BetterHutches_DirtinessReduction,
+}

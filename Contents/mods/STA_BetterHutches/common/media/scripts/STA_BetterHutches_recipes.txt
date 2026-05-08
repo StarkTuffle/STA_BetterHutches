@@ -1,0 +1,26 @@
+module STA_BetterHutches
+{
+    imports
+    {
+        Base
+    }
+
+    craftRecipe CraftWoodchipsBag
+    {
+        timedAction = SharpenStakeWood,
+        time = 100,
+        xpAward = Carving:5,
+        category = Carving,
+        Tags = AnySurfaceCraft,
+        inputs
+        {
+            item 1 tags[base:sharpknife;base:meatcleaver] mode:keep flags[MayDegradeLight;Prop1;IsNotDull],
+            item 1 [Base.EmptySandbag],
+            item 1 [Base.Log;Base.LargeBranch;2:Base.Plank;2:Base.FieldHockeyStick;3:Base.TreeBranch2;3:Base.BaseballBat;3:Base.BaseballBat_Crafted;3:Base.LongHandle;3:Base.WoodenStick2;3:Base.FieldHockeyStick_Broken;4:Base.LongStick_Broken;6:Base.Handle;6:Base.LongHandle_Broken;6:Base.UnusableWood;12:Base.SmallHandle] mode:destroy,
+        }
+        outputs
+        {
+            item 1 STA_BetterHutches.WoodchipsBag,
+        }
+    }
+}
