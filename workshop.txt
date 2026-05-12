@@ -1,4 +1,5 @@
 version=1
+id=3721829036
 title=ST Additions - Better Hutches
 description=[h1]Maintaining Hutches has never been easier[/h1]
 description=You'll never have to worry about leaving your chickens unattended while you're out looting!
