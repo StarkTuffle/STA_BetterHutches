@@ -19,4 +19,15 @@ module STA_BetterHutches
         UseWhileEquipped = false,
         WorldStaticModel = SandBag,
     }
+
+    item AutomaticHutchDoor
+    {
+        DisplayCategory = Electronics,
+        ItemType = base:normal,
+        Weight = 1.0,
+        Icon = TimerCrafted,
+        MetalValue = 5.0,
+        WorldStaticModel = CraftedTimer,
+        Tags = base:hasmetal,
+    }
 }

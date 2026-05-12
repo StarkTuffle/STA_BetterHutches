@@ -23,4 +23,31 @@ module STA_BetterHutches
             item 1 STA_BetterHutches.WoodchipsBag,
         }
     }
+
+    craftRecipe CraftAutomaticHutchDoor
+    {
+        timedAction = MakingElectrical,
+        time = 200,
+        NeedToBeLearn = true,
+        SkillRequired = Electricity:6,
+        Tags = AnySurfaceCraft,
+        category = Electrical,
+        AutoLearnAny = Electricity:8,
+        xpAward = Electricity:30,
+        inputs
+        {
+            item 1 tags[base:screwdriver] mode:keep flags[Prop1],
+            item 1 tags[base:pliers] mode:keep flags[MayDegradeVeryLight],
+            item 1 [Base.TimerCrafted],
+            item 1 [Base.Battery] mode:destroy,
+            item 2 [Base.SmallSheetMetal],
+            item 4 [Base.Screws],
+            item 4 [Base.ElectronicsScrap],
+            item 4 [Base.ElectricWire],
+        }
+        outputs
+        {
+            item 1 STA_BetterHutches.AutomaticHutchDoor,
+        }
+    }
 }
