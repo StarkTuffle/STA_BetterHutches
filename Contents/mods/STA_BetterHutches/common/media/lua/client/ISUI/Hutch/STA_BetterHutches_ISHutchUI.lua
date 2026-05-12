@@ -1,5 +1,6 @@
 local _old_ISHutchRoostParentPanel_render = ISHutchRoostParentPanel.render
 local _old_ISHutchRoostParentPanel_createChildren = ISHutchRoostParentPanel.createChildren
+local _old_ISHutchNestBox_doNestStuff = ISHutchNestBox.doNestStuff
 local Utils = require "STA_BetterHutches_Utils"
 
 local FONT_HGT_SMALL = getTextManager():getFontHeight(UIFont.Small)
@@ -53,5 +54,20 @@ function ISHutchRoostParentPanel:render()
         self.addWoodchipsBtn:setY(boxY + FONT_HGT_SMALL + 2)
         self.addWoodchipsBtn:setTitle(getText("IGUI_STA_BetterHutches_AddWoodchips"))
         self.addWoodchipsBtn:setVisible(currentWoodChips < maxWoodChips)
+    end
+end
+
+function ISHutchNestBox:doNestStuff()
+    _old_ISHutchNestBox_doNestStuff(self)
+
+    if not self:getAnimal() and self.playerObj:getPerkLevel(Perks.Husbandry) >= Utils.getSandboxInt("MinAnimalCareLevel") then
+        local nest = self:getNest()
+        for i, pos in ipairs(self.possibleEggPosition) do
+            if nest:getEggsNb() >= i then
+                if nest:getEgg(i-1):isFertilized() then
+                    self:drawTexture(getTexture("Item_Egg"), pos.x, pos.y, 0.5, 1, 0.1, 0.1)
+                end
+            end
+        end
     end
 end

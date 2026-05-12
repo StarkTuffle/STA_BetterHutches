@@ -11,3 +11,9 @@ option STA_BetterHutches.DirtinessReduction
     type = integer, min = 1, max = 100, default = 10,
     page = STA_BetterHutches, translation = STA_BetterHutches_DirtinessReduction,
 }
+
+option STA_BetterHutches.MinAnimalCareLevel
+{
+    type = integer, min = 0, max = 10, default = 5,
+    page = STA_BetterHutches, translation = STA_BetterHutches_MinAnimalCareLevel,
+}
