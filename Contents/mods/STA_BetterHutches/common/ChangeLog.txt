@@ -1,3 +1,7 @@
 [ Version 1.0.0 ]
 - Initial Release
 [ ------ ]
+[ Version 1.0.1 ]
+- Added Wood Splinters as optional ingredient for Sack of Woodchips
+- Fixed CraftWoodchipsBag not working will all empty sacks
+[ ------ ]
