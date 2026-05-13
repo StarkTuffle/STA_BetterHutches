@@ -1,6 +1,8 @@
 local _old_ISHutchRoostParentPanel_render = ISHutchRoostParentPanel.render
 local _old_ISHutchRoostParentPanel_createChildren = ISHutchRoostParentPanel.createChildren
 local _old_ISHutchNestBox_doNestStuff = ISHutchNestBox.doNestStuff
+local _old_ISHutchNestBox_onRightMouseUp = ISHutchNestBox.onRightMouseUp
+
 local Utils = require "STA_BetterHutches_Utils"
 
 local FONT_HGT_SMALL = getTextManager():getFontHeight(UIFont.Small)
@@ -9,6 +11,19 @@ local UI_BORDER_SPACING = 10
 local NEST_BOX_HEIGHT = 130
 local PROGRESS_WIDTH = 200
 local PADXY = 20
+
+function ISHutchNestBox:onButtonGrabEggType(fertilized)
+    local nest = self:getNest()
+    if luautils.walkAdj(self.playerObj, self.hutchUI.hutch:getEntrySq()) then
+        if self.playerObj:getPrimaryHandItem() then
+            ISTimedActionQueue.add(ISUnequipAction:new(self.playerObj, self.playerObj:getPrimaryHandItem(), 50))
+        end
+        if self.playerObj:getSecondaryHandItem() and self.playerObj:getSecondaryHandItem() ~= self.playerObj:getPrimaryHandItem() then
+            ISTimedActionQueue.add(ISUnequipAction:new(self.playerObj, self.playerObj:getSecondaryHandItem(), 50))
+        end
+        ISTimedActionQueue.add(STA_BetterHutches_ISHutchGrabEggType:new(self.playerObj, nest, self.hutchUI.hutch, fertilized))
+    end
+end
 
 function ISHutchRoostParentPanel:onWoodchipSelect()
     if luautils.walkAdj(self.chr, self.hutch:getEntrySq()) then
@@ -67,6 +82,37 @@ function ISHutchNestBox:doNestStuff()
                 if nest:getEgg(i-1):isFertilized() then
                     self:drawTexture(getTexture("Item_Egg"), pos.x, pos.y, 0.5, 1, 0.1, 0.1)
                 end
+            end
+        end
+    end
+end
+
+function ISHutchNestBox:onRightMouseUp(x, y)
+    _old_ISHutchNestBox_onRightMouseUp(self, x, y)
+
+    if self:getNest():getEggsNb() > 0 then
+        if self.playerObj:getPerkLevel(Perks.Husbandry) >= Utils.getSandboxInt("MinAnimalCareLevel") then
+            local context = ISContextMenu.get(self.playerNum, x + self:getAbsoluteX(), y + self:getAbsoluteY())
+
+            context:addOption(getText("IGUI_Hutch_GrabEggs"), self, ISHutchNestBox.onButtonGrab)
+            local unfertOption = context:addOption(getText("IGUI_STA_BetterHutches_GrabUnfertilizedEggs"), self, ISHutchNestBox.onButtonGrabEggType, false)
+            local fertOption = context:addOption(getText("IGUI_STA_BetterHutches_GrabFertilizedEggs"), self, ISHutchNestBox.onButtonGrabEggType, true)
+            local count = {0,0} -- {Fertilized, Unfertilized}
+            for n = 0, self:getNest():getEggsNb() - 1 do
+                if self:getNest():getEgg(n):isFertilized() then
+                    count[1] = count[1] + 1
+                else
+                    count[2] = count[2] + 1
+                end
+            end
+            if count[1] == 0 then
+                fertOption.notAvailable = true
+            end
+            if count[2] == 0 then
+                unfertOption.notAvailable = true
+            end
+            if AnimalContextMenu.cheat then
+                context:addDebugOption("Remove Egg", self, ISHutchNestBox.onCheatRemoveEgg)
             end
         end
     end
