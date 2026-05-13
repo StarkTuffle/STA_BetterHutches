@@ -44,4 +44,6 @@ This mod allows woodchips to be added to chicken hutches to reduce the rate of d
 
 ![Crafting Recipe Example](https://raw.githubusercontent.com/StarkTuffle/STA_BetterHutches/refs/heads/main/img/Example_CraftRecipe.png)
 
+![Fertilized Egg Example](https://raw.githubusercontent.com/StarkTuffle/STA_BetterHutches/refs/heads/main/img/Example_NestUI.png)
+
 ![Sandbox Options](https://raw.githubusercontent.com/StarkTuffle/STA_BetterHutches/refs/heads/main/img/Example_SandboxOptions.png)

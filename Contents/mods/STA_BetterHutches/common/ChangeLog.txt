@@ -5,3 +5,7 @@
 - Added Wood Splinters as optional ingredient for Sack of Woodchips
 - Fixed CraftWoodchipsBag not working will all empty sacks
 [ ------ ]
+[ Version 1.1.0 ]
+- Added fertilized egg utilites
+- Added Russian translation (Thank you AVA)
+[ ------ ]
