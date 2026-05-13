@@ -14,7 +14,8 @@ description=If you run into any issues while playing let me know in the pinned d
 description=[hr][/hr][h2] Translations [/h2]
 description=I'm currently expanding translations so players around the world can enjoy it in their own language! If you?d like to help with translating or proofreading, check out the pinned discussion to get involved.
 description=[h3] Currently Available [/h3]
-description=[list][*]English[/list]
+description=[list][*]English
+description=[*]Russian (Thanks to [url=https://steamcommunity.com/profiles/76561198155444416]AVA[/url])[/list]
 description=[hr][/hr][h2] Compatibility [/h2]
 description=[table][tr][th]Version[/th][th]Singleplayer[/th][th]Multiplayer[/th][/tr]
 description=[tr][td]Stable (b41.78.19)[/td][td]❌[/td][td]❌[/td][/tr]
