@@ -75,7 +75,7 @@ end
 function ISHutchNestBox:doNestStuff()
     _old_ISHutchNestBox_doNestStuff(self)
 
-    if not self:getAnimal() and self.playerObj:getPerkLevel(Perks.Husbandry) >= Utils.getSandboxInt("MinAnimalCareLevel") then
+    if not self:getAnimal() and self.playerObj:getPerkLevel(Perks.Husbandry) >= Utils.getSandboxInt("FertilizedEggLevel") then
         local nest = self:getNest()
         for i, pos in ipairs(self.possibleEggPosition) do
             if nest:getEggsNb() >= i then
@@ -91,7 +91,7 @@ function ISHutchNestBox:onRightMouseUp(x, y)
     _old_ISHutchNestBox_onRightMouseUp(self, x, y)
 
     if self:getNest():getEggsNb() > 0 then
-        if self.playerObj:getPerkLevel(Perks.Husbandry) >= Utils.getSandboxInt("MinAnimalCareLevel") then
+        if self.playerObj:getPerkLevel(Perks.Husbandry) >= Utils.getSandboxInt("FertilizedEggLevel") then
             local context = ISContextMenu.get(self.playerNum, x + self:getAbsoluteX(), y + self:getAbsoluteY())
 
             context:addOption(getText("IGUI_Hutch_GrabEggs"), self, ISHutchNestBox.onButtonGrab)

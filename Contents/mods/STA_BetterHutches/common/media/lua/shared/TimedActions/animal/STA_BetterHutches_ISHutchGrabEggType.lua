@@ -4,7 +4,7 @@ local Utils = require "STA_BetterHutches_Utils"
 STA_BetterHutches_ISHutchGrabEggType = ISBaseTimedAction:derive("STA_BetterHutches_ISHutchGrabEggType")
 
 function STA_BetterHutches_ISHutchGrabEggType:isValid()
-    return self.nestbox ~= nil and self.nestbox:getEggsNb() > self.idx and self.hutch ~= nil and self.character:getPerkLevel(Perks.Husbandry) >= Utils.getSandboxInt("MinAnimalCareLevel")
+    return self.nestbox ~= nil and self.nestbox:getEggsNb() > self.idx and self.hutch ~= nil and self.character:getPerkLevel(Perks.Husbandry) >= Utils.getSandboxInt("FertilizedEggLevel")
 end
 
 function STA_BetterHutches_ISHutchGrabEggType:waitToStart()

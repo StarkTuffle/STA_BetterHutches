@@ -4,7 +4,7 @@ Utils.modID = "STA_BetterHutches"
 Utils.SandboxDefaults = {
     ["WoodchipsBagAmount"] = 4,
     ["DirtinessReduction"] = 10,
-    ["MinAnimalCareLevel"] = 5
+    ["FertilizedEggLevel"] = 5
 }
 
 ---@param key String

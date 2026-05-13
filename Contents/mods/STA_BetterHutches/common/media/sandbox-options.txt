@@ -12,8 +12,8 @@ option STA_BetterHutches.DirtinessReduction
     page = STA_BetterHutches, translation = STA_BetterHutches_DirtinessReduction,
 }
 
-option STA_BetterHutches.MinAnimalCareLevel
+option STA_BetterHutches.FertilizedEggLevel
 {
     type = integer, min = 0, max = 10, default = 5,
-    page = STA_BetterHutches, translation = STA_BetterHutches_MinAnimalCareLevel,
+    page = STA_BetterHutches, translation = STA_BetterHutches_FertilizedEggLevel,
 }
