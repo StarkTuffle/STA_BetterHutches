@@ -1,0 +1,12 @@
+{
+    "Sandbox_STA_BetterHutches": "ST Additions - Better Hutches",
+
+    "Sandbox_STA_BetterHutches_WoodchipsBagAmount": "Maximale Hackschnitzelsäcke",
+    "Sandbox_STA_BetterHutches_WoodchipsBagAmount_tooltip": "Maximale Anzahl Hackschnitzelsäcke pro Hühnerstall",
+
+    "Sandbox_STA_BetterHutches_DirtinessReduction": "Schmutzreduzierung",
+    "Sandbox_STA_BetterHutches_DirtinessReduction_tooltip": "Reduziert den Schmutz um 1 / Schmutzreduzierung. Skaliert mit der Menge an Hackschnitzelsäcken. (Maximale Hackschnitzelsäcke gewährt volle Reduktion)",
+
+    "Sandbox_STA_BetterHutches_FertilizedEggLevel": "Befruchtetes Ei - Level",
+    "Sandbox_STA_BetterHutches_FertilizedEggLevel_tooltip": "Minimales Animal Care / Tierpflege Level um erkennen zu können ob ein Ei befruchtet ist."
+}
