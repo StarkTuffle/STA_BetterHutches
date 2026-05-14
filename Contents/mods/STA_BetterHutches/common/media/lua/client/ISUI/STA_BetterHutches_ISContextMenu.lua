@@ -5,8 +5,9 @@ ContextMenu = STA_BetterHutches_ISContextMenu or {}
 ---@param playerObj IsoPlayer
 ---@param hutch IsoHutch
 function ContextMenu.onWoodchipSelect(playerObj, hutch)
-    local item = playerObj:getInventory():getFirstTypeRecurse("STA_BetterHutches.WoodchipsBag")
     if luautils.walkAdj(playerObj, hutch:getEntrySq()) then
+        local item = playerObj:getInventory():getFirstTypeRecurse("STA_BetterHutches.WoodchipsBag")
+        ISInventoryPaneContextMenu.transferIfNeeded(playerObj, item)
         ISTimedActionQueue.add(STA_BetterHutches_ISAddWoodchipsToHutch:new(playerObj, hutch, item))
     end
 end
