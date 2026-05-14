@@ -5,7 +5,7 @@ description=[h1]Maintaining Hutches has never been easier[/h1]
 description=You'll never have to worry about leaving your chickens unattended while you're out looting!
 description=[hr][/hr][h2] Features [/h2]
 description=[list][*]New "Sack of Woodchips" item can be added to reduce how fast hutches get dirty.
-description=[*]Easily distinguish ferilized eggs.
+description=[*]Easily distinguish ferilized eggs in your hutches and inventory.
 description=[*]Fully customizable through sandbox settings.[/list]
 description=[hr][/hr][h2]Feedback and Suggestions[/h2]
 description=I'm always looking for more features to add!
@@ -17,7 +17,7 @@ description=I'm currently expanding translations so players around the world can
 description=[h3] Currently Available [/h3]
 description=[list][*]English
 description=[*]Russian (Thanks to [url=https://steamcommunity.com/profiles/76561198155444416]AVA[/url])
-description=[*]German (Thanks to[url=https://steamcommunity.com/profiles/76561198116293720]Beldrar[/url])[/list]
+description=[*]German (Thanks to [url=https://steamcommunity.com/profiles/76561198116293720]Beldrar[/url])[/list]
 description=[hr][/hr][h2] Compatibility [/h2]
 description=[table][tr][th]Version[/th][th]Singleplayer[/th][th]Multiplayer[/th][/tr]
 description=[tr][td]Stable (b41.78.19)[/td][td]❌[/td][td]❌[/td][/tr]

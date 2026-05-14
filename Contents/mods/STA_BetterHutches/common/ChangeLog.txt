@@ -9,3 +9,7 @@
 - Added fertilized egg utilites
 - Added Russian translation (Thank you AVA)
 [ ------ ]
+[ Version 1.1.1 ]
+- Fixed Sack of Woodchips not being consumed if in a backpack
+- Added German translation (Thank you Beldrar)
+[ ------ ]

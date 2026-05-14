@@ -13,6 +13,7 @@ This mod allows woodchips to be added to chicken hutches to reduce the rate of d
 ## Features
 
 - New "Sack of Woodchips" item can be added to reduce how fast hutches get dirty.
+- Easily distinguish ferilized eggs in your hutches and inventory.
 - Fully customizable through sandbox settings.
 
 ---
