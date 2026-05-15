@@ -4,7 +4,7 @@ local Utils = require "STA_BetterHutches_Utils"
 STA_BetterHutches_ISInstallAutoDoor = ISBaseTimedAction:derive("STA_BetterHutches_ISInstallAutoDoor")
 
 function STA_BetterHutches_ISInstallAutoDoor:isValid()
-    return (self.character:getInventory():containsTypeRecurse("STA_BetterHutches.AutomaticHutchDoor") and (not Utils.getObjectModData(self.hutch, "automaticDoorInstalled")))
+    return (self.character:getInventory():containsID(self.item:getID())) and (self.character:getInventory():containsID(self.tool:getID())) and (not Utils.getObjectModData(self.hutch, "automaticDoorInstalled"))
 end
 
 function STA_BetterHutches_ISInstallAutoDoor:waitToStart()

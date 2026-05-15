@@ -19,16 +19,23 @@ end
 ---@param playerObj IsoPlayer
 ---@param hutch IsoHutch
 function ContextMenu.onInstallAutoDoorSelect(playerObj, hutch)
-    local item = playerObj:getInventory():getFirstTypeRecurse("STA_BetterHutches.AutomaticHutchDoor")
-    local tool = playerObj:getInventory():getFirstTagEvalRecurse(ItemTag.SCREWDRIVER, predicateNotBroken)
-    ISTimedActionQueue.add(STA_BetterHutches_ISInstallAutoDoor:new(playerObj, hutch, tool, item))
+    if luautils.walkAdj(playerObj, hutch:getEntrySq()) then
+        local item = playerObj:getInventory():getFirstTypeRecurse("STA_BetterHutches.AutomaticHutchDoor")
+        local tool = playerObj:getInventory():getFirstTagEvalRecurse(ItemTag.SCREWDRIVER, predicateNotBroken)
+        ISInventoryPaneContextMenu.transferIfNeeded(playerObj, tool)
+        ISInventoryPaneContextMenu.transferIfNeeded(playerObj, item)
+        ISTimedActionQueue.add(STA_BetterHutches_ISInstallAutoDoor:new(playerObj, hutch, tool, item))
+    end
 end
 
 ---@param playerObj IsoPlayer
 ---@param hutch IsoHutch
 function ContextMenu.onUninstallAutoDoorSelect(playerObj, hutch)
-    local tool = playerObj:getInventory():getFirstTagEvalRecurse(ItemTag.SCREWDRIVER, predicateNotBroken)
-    ISTimedActionQueue.add(STA_BetterHutches_ISUninstallAutoDoor:new(playerObj, hutch, tool))
+    if luautils.walkAdj(playerObj, hutch:getEntrySq()) then
+        local tool = playerObj:getInventory():getFirstTagEvalRecurse(ItemTag.SCREWDRIVER, predicateNotBroken)
+        ISInventoryPaneContextMenu.transferIfNeeded(playerObj, tool)
+        ISTimedActionQueue.add(STA_BetterHutches_ISUninstallAutoDoor:new(playerObj, hutch, tool))
+    end
 end
 
 ---@param playerIdx integer

@@ -4,7 +4,7 @@ local Utils = require "STA_BetterHutches_Utils"
 STA_BetterHutches_ISUninstallAutoDoor = ISBaseTimedAction:derive("STA_BetterHutches_ISUninstallAutoDoor")
 
 function STA_BetterHutches_ISUninstallAutoDoor:isValid()
-    return (Utils.getObjectModData(self.hutch, "automaticDoorInstalled"))
+    return (self.character:getInventory():containsID(self.tool:getID())) and (Utils.getObjectModData(self.hutch, "automaticDoorInstalled"))
 end
 
 function STA_BetterHutches_ISUninstallAutoDoor:waitToStart()

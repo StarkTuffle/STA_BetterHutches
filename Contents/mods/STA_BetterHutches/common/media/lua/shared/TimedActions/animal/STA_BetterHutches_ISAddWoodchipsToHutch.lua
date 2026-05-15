@@ -4,7 +4,7 @@ local Utils = require "STA_BetterHutches_Utils"
 STA_BetterHutches_ISAddWoodchipsToHutch = ISBaseTimedAction:derive("STA_BetterHutches_ISAddWoodchipsToHutch")
 
 function STA_BetterHutches_ISAddWoodchipsToHutch:isValid()
-    return (self.character:getInventory():containsType("STA_BetterHutches.WoodchipsBag") and (Utils.getObjectModData(self.hutch, "hasWoodChips") or 0) < Utils.getSandboxInt("WoodchipsBagAmount"))
+    return (self.character:getInventory():containsID(self.item:getID()) and (Utils.getObjectModData(self.hutch, "hasWoodChips") or 0) < Utils.getSandboxInt("WoodchipsBagAmount"))
 end
 
 function STA_BetterHutches_ISAddWoodchipsToHutch:waitToStart()
