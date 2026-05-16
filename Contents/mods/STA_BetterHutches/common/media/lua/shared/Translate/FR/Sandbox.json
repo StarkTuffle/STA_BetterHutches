@@ -1,0 +1,12 @@
+{
+    "Sandbox_STA_BetterHutches": "ST Additions - Better Hutches",
+
+    "Sandbox_STA_BetterHutches_WoodchipsBagAmount": "Nombre maximal de copeaux de bois",
+    "Sandbox_STA_BetterHutches_WoodchipsBagAmount_tooltip": "Nombre maximal de sacs de copeaux de bois par poulailler.",
+
+    "Sandbox_STA_BetterHutches_DirtinessReduction": "Réduction de la saleté",
+    "Sandbox_STA_BetterHutches_DirtinessReduction_tooltip": "La saleté est réduite de 1 / Réduction de la saleté. Ce facteur augmente en fonction du niveau de remplissage du poulailler en copeaux de bois (le nombre maximal de copeaux de bois applique la réduction complète).",
+
+    "Sandbox_STA_BetterHutches_FertilizedEggLevel": "Niveau pour voir les œufs fécondés",
+    "Sandbox_STA_BetterHutches_FertilizedEggLevel_tooltip": "Le niveau minimum en Élevage requis pour distinguer les œufs fécondés."
+}
