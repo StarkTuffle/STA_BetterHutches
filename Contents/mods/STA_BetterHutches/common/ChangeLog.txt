@@ -13,3 +13,9 @@
 - Fixed Sack of Woodchips not being consumed if in a backpack
 - Added German translation (Thank you Beldrar)
 [ ------ ]
+[ Version 1.1.2 ]
+- Added additional guards to tooltip override for better compatibility
+- Added Dutch translation (Thank you General M-13)
+- Added French translation (Thank you KnarD)
+- Added Simplified Chinese translation (Thank you 无聊的栀子)
+[ ------ ]

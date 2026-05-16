@@ -6,7 +6,7 @@
 
 ## Overview
 
-This mod allows woodchips to be added to chicken hutches to reduce the rate of dirtiness increase. When configured, additional woodchips added further reduce the rate. Options for dirtiness reduction and max woodchips allowed are configurable though sandbox settings.
+This mod allows woodchips to be added to chicken hutches to reduce the rate of dirtiness increase. When configured, additional woodchips added further reduce the rate. Options for dirtiness reduction and max woodchips allowed are configurable though sandbox settings. Allows for fertilized eggs to be distinguished, minimum Animal Care level can be configured through sandbox settings.
 
 ---
 
