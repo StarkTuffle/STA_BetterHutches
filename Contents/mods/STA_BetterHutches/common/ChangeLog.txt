@@ -19,3 +19,6 @@
 - Added French translation (Thank you KnarD)
 - Added Simplified Chinese translation (Thank you 无聊的栀子)
 [ ------ ]
+[ Version 1.1.3 ]
+- Fixed ISToolTipInv failure if self.item was not an InventoryItem
+[ ------ ]
