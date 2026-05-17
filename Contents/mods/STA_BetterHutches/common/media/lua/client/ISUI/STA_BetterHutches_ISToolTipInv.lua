@@ -3,7 +3,16 @@ local _old_ISToolTipInv_render = ISToolTipInv.render
 local Utils = require "STA_BetterHutches_Utils"
 
 function ISToolTipInv:render()
-    if self.item and self.item:isFood() and self.item:hasTag(ItemTag.EGG) and self.item:isFertilized() and self.tooltip and (self.tooltip:getCharacter():getPerkLevel(Perks.Husbandry) >= Utils.getSandboxInt("FertilizedEggLevel")) then
+    if (
+        true
+        and self.item
+        and instanceof(self.item, "InventoryItem")
+        and self.item:isFood()
+        and self.item:hasTag(ItemTag.EGG)
+        and self.item:isFertilized()
+        and self.tooltip
+        and (self.tooltip:getCharacter():getPerkLevel(Perks.Husbandry) >= Utils.getSandboxInt("FertilizedEggLevel"))
+    ) then
         local LINE_SPACING = self.tooltip:getLineSpacing()
         local extraH = LINE_SPACING
 
