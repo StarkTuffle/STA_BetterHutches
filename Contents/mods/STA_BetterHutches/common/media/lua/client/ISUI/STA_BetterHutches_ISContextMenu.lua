@@ -1,6 +1,6 @@
 local Utils = require "STA_BetterHutches_Utils"
 
-ContextMenu = STA_BetterHutches_ISContextMenu or {}
+local ContextMenu = STA_BetterHutches_ISContextMenu or {}
 
 ---@param playerObj IsoPlayer
 ---@param hutch IsoHutch
