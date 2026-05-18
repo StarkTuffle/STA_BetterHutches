@@ -69,6 +69,7 @@ function Utils.setObjectModData(obj, key, value)
         data[Utils.modID] = {}
     end
     data[Utils.modID][key] = value
+    obj:transmitModData()
 end
 
 _G.STA_BetterHutches_Utils = Utils
