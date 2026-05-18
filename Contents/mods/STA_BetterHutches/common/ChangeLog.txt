@@ -22,3 +22,7 @@
 [ Version 1.1.3 ]
 - Fixed ISToolTipInv failure if self.item was not an InventoryItem
 [ ------ ]
+[ Version 1.1.4 ]
+- Fixed global variables that should have been local
+- Fixed ModData not syncing in MP
+[ ------ ]
