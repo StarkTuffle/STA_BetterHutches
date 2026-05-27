@@ -28,6 +28,7 @@ end
 function ISHutchRoostParentPanel:onWoodchipSelect()
     if luautils.walkAdj(self.chr, self.hutch:getEntrySq()) then
         local item = self.chr:getInventory():getFirstTypeRecurse("STA_BetterHutches.WoodchipsBag")
+        ISInventoryPaneContextMenu.transferIfNeeded(self.chr, item)
         ISTimedActionQueue.add(STA_BetterHutches_ISAddWoodchipsToHutch:new(self.chr, self.hutch, item))
     end
 end
