@@ -26,3 +26,6 @@
 - Fixed global variables that should have been local
 - Fixed ModData not syncing in MP
 [ ------ ]
+[ Version 1.1.5 ]
+- Fixed woodchips not transferring from backpacks
+[ ------ ]
