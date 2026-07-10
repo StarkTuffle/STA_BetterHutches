@@ -15,7 +15,7 @@ module STA_BetterHutches
         ReplaceInSecondHand = Bag_Sandbag_LHand holdingbagleft,
         ReplaceOnDeplete = Base.EmptySandbag,
         Tooltip = Tooltip_item_empty_sack_container,
-        UseDelta = 0.25,
+        UseDelta = 1.0,
         UseWhileEquipped = false,
         WorldStaticModel = SandBag,
     }
