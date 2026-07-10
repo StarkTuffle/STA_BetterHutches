@@ -29,3 +29,7 @@
 [ Version 1.1.5 ]
 - Fixed woodchips not transferring from backpacks
 [ ------ ]
+[ Version 1.1.6 ]
+- Patched EmptySack recipe to include Sack of Woodchips
+- Fixed partially full sacks spawning
+[ ------ ]
