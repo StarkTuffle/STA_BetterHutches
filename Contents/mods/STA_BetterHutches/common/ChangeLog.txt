@@ -33,3 +33,6 @@
 - Patched EmptySack recipe to include Sack of Woodchips
 - Fixed partially full sacks spawning
 [ ------ ]
+[ Version 1.1.7 ]
+- Replaced EmptySack recipe patch with dedicated recipe script
+[ ------ ]
