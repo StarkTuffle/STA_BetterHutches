@@ -5,6 +5,22 @@ module STA_BetterHutches
         Base
     }
 
+    craftRecipe EmptySack
+    {
+        timedAction = UnPackSack,
+        time = 15,
+        Tags = InHandCraft,
+        category = Packing,
+        inputs
+        {
+            item 1 [STA_BetterHutches.WoodchipsBag] mode:destroy,
+        }
+        outputs
+        {
+            item 1 Base.EmptySandbag,
+        }
+    }
+
     craftRecipe CraftWoodchipsBag
     {
         timedAction = SharpenStakeWood,

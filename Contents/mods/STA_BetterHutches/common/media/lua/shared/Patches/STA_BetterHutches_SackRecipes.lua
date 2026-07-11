@@ -36,4 +36,4 @@ local function patchRecipe(recipeID, testInput, itemsToAdd)
     end
 end
 
-Events.OnGameBoot.Add(patchRecipe("Base.EmptySack", identifyInput, items))
+-- Events.OnGameStart.Add(patchRecipe("Base.EmptySack", identifyInput, items)) 
