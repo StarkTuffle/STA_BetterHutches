@@ -28,14 +28,12 @@ ProceduralDistributions.list["CrateWoodchips"] = {
     }
 }
 
-table.insert(SuburbsDistributions["barn"]["cardboardbox"]["procList"], {name="CrateWoodchips", min=0, max=99, weightChance=50})
+table.insert(SuburbsDistributions["barn"]["other"]["procList"], {name="CrateWoodchips", min=0, max=99, weightChance=50})
 table.insert(SuburbsDistributions["barn"]["crate"]["procList"], {name="CrateWoodchips", min=0, max=99, weightChance=50})
 table.insert(SuburbsDistributions["barn"]["metal_shelves"]["procList"], {name="CrateWoodchips", min=0, max=99, weightChance=50})
 
-table.insert(SuburbsDistributions["farmstorage"]["crate"]["procList"], {name="CrateWoodchips", min=0, max=1, weightChance=50})
+table.insert(SuburbsDistributions["farmstorage"]["other"]["procList"], {name="CrateWoodchips", min=0, max=1, weightChance=50})
 
-table.insert(SuburbsDistributions["gardenstore"]["crate"]["procList"], {name="CrateWoodchips", min=0, max=99, weightChance=10})
-table.insert(SuburbsDistributions["gardenstore"]["metal_shelves"]["procList"], {name="CrateWoodchips", min=0, max=2, weightChance=10})
-table.insert(SuburbsDistributions["gardenstore"]["shelves"]["procList"], {name="CrateWoodchips", min=0, max=2, weightChance=10})
+table.insert(SuburbsDistributions["gardenstore"]["other"]["procList"], {name="CrateWoodchips", min=0, max=99, weightChance=10})
 
-table.insert(SuburbsDistributions["shed"]["crate"]["procList"], {name="CrateWoodchips", min=0, max=1, weightChance=5})
+table.insert(SuburbsDistributions["shed"]["other"]["procList"], {name="CrateWoodchips", min=0, max=1, weightChance=5})
