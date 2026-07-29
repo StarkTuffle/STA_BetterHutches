@@ -1,0 +1,8 @@
+name=StarkTruffle Additions - Better Hutches
+author=StarkTruffle
+poster=poster.png
+icon=icon.png
+id=STA_BetterHutches
+description=Improvements to chicken hutches.
+modversion=1.1.8
+versionMin=42.17.0
