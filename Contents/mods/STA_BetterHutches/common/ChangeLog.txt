@@ -36,3 +36,6 @@
 [ Version 1.1.7 ]
 - Replaced EmptySack recipe patch with dedicated recipe script
 [ ------ ]
+[ Version 1.1.8 ]
+- Updated distributions for b42.20
+[ ------ ]
