@@ -41,5 +41,6 @@
 [ ------ ]
 [ Version 1.1.9 ]
 - Updated translations for b42.20.1
+- Added Indonesian translation (Thank you Pal)
 - Updated NL translation
 [ ------ ]

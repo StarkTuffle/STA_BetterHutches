@@ -1,0 +1,9 @@
+{
+    "Sandbox_STA_BetterHutches": "ST Additions - Better Hutches",
+    "Sandbox_STA_BetterHutches_WoodchipsBagAmount": "Maksimum Serpihan Kayu",
+    "Sandbox_STA_BetterHutches_WoodchipsBagAmount_tooltip": "Jumlah maksimum karung serpihan kayu per kandang.",
+    "Sandbox_STA_BetterHutches_DirtinessReduction": "Pengurangan Kekotoran",
+    "Sandbox_STA_BetterHutches_DirtinessReduction_tooltip": "Kekotoran dikurangi sebesar 1 / Pengurangan Kekotoran. Faktor ini bertambah sesuai seberapa penuh kandang berisi serpihan kayu (Maksimum Serpihan Kayu memberikan pengurangan penuh.)",
+    "Sandbox_STA_BetterHutches_FertilizedEggLevel": "Level Telur Terbuahi",
+    "Sandbox_STA_BetterHutches_FertilizedEggLevel_tooltip": "Level Perawatan Hewan minimum yang diperlukan untuk membedakan telur terbuahi."
+}
