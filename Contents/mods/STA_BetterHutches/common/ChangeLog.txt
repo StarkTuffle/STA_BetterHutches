@@ -39,3 +39,6 @@
 [ Version 1.1.8 ]
 - Updated distributions for b42.20
 [ ------ ]
+[ Version 1.1.9 ]
+- Updated translations for b42.20.1
+[ ------ ]
