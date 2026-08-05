@@ -3,5 +3,7 @@
     "Sandbox_STA_BetterHutches_WoodchipsBagAmount": "Maximaal aantal houtsnippers",
     "Sandbox_STA_BetterHutches_WoodchipsBagAmount_tooltip": "Maximum aantal zakken houtsnippers per hok.",
     "Sandbox_STA_BetterHutches_DirtinessReduction": "Vuilheid vermindering",
-    "Sandbox_STA_BetterHutches_DirtinessReduction_tooltip": "De mate van vervuiling wordt verminderd met 1 / Vervuilingsreductie. Deze factor geeft aan hoe vol het hok is met houtsnippers (Maximale hoeveelheid houtsnippers zorgt voor de maximale reductie)."
+    "Sandbox_STA_BetterHutches_DirtinessReduction_tooltip": "De mate van vervuiling wordt verminderd met 1 / Vervuilingsreductie. Deze factor geeft aan hoe vol het hok is met houtsnippers (Maximale hoeveelheid houtsnippers zorgt voor de maximale reductie).",
+    "Sandbox_STA_BetterHutches_FertilizedEggLevel": "Bevrucht ei niveau",
+    "Sandbox_STA_BetterHutches_FertilizedEggLevel_tooltip": "Het minimum niveau in Dierenzorg vereist om te zien of eieren bevrucht zijn."
 }

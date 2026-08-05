@@ -2,5 +2,7 @@
     "IGUI_STA_BetterHutches_JobType_PouringWoodchips": "Houtsnippers toevoegen",
     "IGUI_STA_BetterHutches_Woodchips": "Houtsnippers: %1%%",
     "IGUI_STA_BetterHutches_AddWoodchips": "Voeg Houtsnippers toe",
-    "IGUI_STA_BetterHutches_NeedWoodchips": "Houdsnippers nodig"
+    "IGUI_STA_BetterHutches_NeedWoodchips": "Houdsnippers nodig",
+    "IGUI_STA_BetterHutches_GrabUnfertilizedEggs": "Pak niet bevruchte eieren",
+    "IGUI_STA_BetterHutches_GrabFertilizedEggs": "Pak bevruchte eieren"
 }
