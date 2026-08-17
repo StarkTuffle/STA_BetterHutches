@@ -1,0 +1,9 @@
+{
+    "Sandbox_STA_BetterHutches": "ST Additions - Coelheiras Melhoradas",
+    "Sandbox_STA_BetterHutches_WoodchipsBagAmount": "Máximo de Lascas de Madeira",
+    "Sandbox_STA_BetterHutches_WoodchipsBagAmount_tooltip": "Número máximo de sacos de lascas de madeira por coelheira.",
+    "Sandbox_STA_BetterHutches_DirtinessReduction": "Redução de Sujeira",
+    "Sandbox_STA_BetterHutches_DirtinessReduction_tooltip": "A sujeira é reduzida em 1 / Redução de Sujeira. Esse fator varia de acordo com o quão cheia a coelheira está de lascas de madeira (o Máximo de Lascas de Madeira dá a redução total).",
+    "Sandbox_STA_BetterHutches_FertilizedEggLevel": "Nível para Ovos Fertilizados",
+    "Sandbox_STA_BetterHutches_FertilizedEggLevel_tooltip": "O nível mínimo de Cuidado com Animais necessário para distinguir ovos fertilizados."
+}
