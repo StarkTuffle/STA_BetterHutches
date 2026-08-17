@@ -21,7 +21,8 @@ description=[*]German (Thanks to [url=https://steamcommunity.com/profiles/765611
 description=[*]Dutch (Thanks to [url=https://steamcommunity.com/id/GeneralM13]General M-13[/url])
 description=[*]French (Thanks to [url=https://steamcommunity.com/id/76561197992551657]KnarD[/url])
 description=[*]Simplified Chinese (Thanks to [url=https://steamcommunity.com/id/takami_chika]无聊的栀子[/url])
-description=[*]Indonesian (Thanks to Pal)[/list]
+description=[*]Indonesian (Thanks to Pal)
+description=[*]Brazilian Portuguese (Thanks to [url=https://steamcommunity.com/id/leozimmelo]Leozimmelo[/url])[/list]
 description=[hr][/hr][h2] Compatibility [/h2]
 description=[table][tr][th]Version[/th][th]Singleplayer[/th][th]Multiplayer[/th][/tr]
 description=[tr][td]Stable (b42.20.2)[/td][td]✅[/td][td]✅[/td][/tr]

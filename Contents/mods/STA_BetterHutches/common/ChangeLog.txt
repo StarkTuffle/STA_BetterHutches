@@ -44,3 +44,8 @@
 - Added Indonesian translation (Thank you Pal)
 - Updated NL translation
 [ ------ ]
+[ Version 1.2.0 ]
+- Woodchips now correctly function as a drainable, will fill and reduce gradually rather than in chunks.
+    NOTE: Check your hutches, the change will reduce woodchip count after update
+- Added Brazilian Portuguese translation (Thank you Leozimmelo)
+[ ------ ]
