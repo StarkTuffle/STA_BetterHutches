@@ -1,19 +1,19 @@
 require "TimedActions/Animals/ISHutchCleanFloor"
 local Utils = require "STA_BetterHutches_Utils"
 
-local _old_ISHutchCleanFloor_complete = ISHutchCleanFloor.complete
-local _old_ISHutchCleanFloor_stop = ISHutchCleanFloor.stop
+local _old_ISHutchCleanFloor_clean = ISHutchCleanFloor.clean
 
-function ISHutchCleanFloor:stop()
-    Utils.setObjectModData(self.hutch, "hasWoodChips", 0)
-    Utils.setObjectModData(self.hutch, "lastDirtLevel", 0)
-    Utils.setObjectModData(self.hutch, "lastDirtAdded", 0)
-    _old_ISHutchCleanFloor_stop(self)
-end
+function ISHutchCleanFloor:clean()
+    _old_ISHutchCleanFloor_clean(self)
+    local cleanForce = 1
+    if self.bleach and not self.bleach:getFluidContainer():isEmpty() then
+        cleanForce = 2
+    end
 
-function ISHutchCleanFloor:complete()
-    Utils.setObjectModData(self.hutch, "hasWoodChips", 0)
-    Utils.setObjectModData(self.hutch, "lastDirtLevel", 0)
-    Utils.setObjectModData(self.hutch, "lastDirtAdded", 0)
-    _old_ISHutchCleanFloor_complete(self)
+    local woodchips = Utils.getObjectModData(self.hutch, "hasWoodChips") - cleanForce
+    if woodchips < 0 then
+        woodchips = 0
+    end
+    Utils.setObjectModData(self.hutch, "hasWoodChips", woodchips)
+    Utils.setObjectModData(self.hutch, "lastDirtLevel", self.hutch:getHutchDirt())
 end

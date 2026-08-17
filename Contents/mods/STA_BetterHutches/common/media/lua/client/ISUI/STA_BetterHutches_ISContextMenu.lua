@@ -8,6 +8,9 @@ function ContextMenu.onWoodchipSelect(playerObj, hutch)
     if luautils.walkAdj(playerObj, hutch:getEntrySq()) then
         local item = playerObj:getInventory():getFirstTypeRecurse("STA_BetterHutches.WoodchipsBag")
         ISInventoryPaneContextMenu.transferIfNeeded(playerObj, item)
+        if not playerObj:hasEquipped(item:getFullType()) then
+            ISInventoryPaneContextMenu.equipWeapon(item, true, true, playerObj:getPlayerNum())
+        end
         ISTimedActionQueue.add(STA_BetterHutches_ISAddWoodchipsToHutch:new(playerObj, hutch, item))
     end
 end
@@ -42,7 +45,9 @@ function ContextMenu.onFillWorldContext(playerIdx, context, worldObjects, test)
         end
 
         local woodchipsPresent = Utils.getObjectModData(hutch, "hasWoodChips") or 0
-        if woodchipsPresent >= Utils.getSandboxInt("WoodchipsBagAmount") then
+        local useDelta = round(getScriptManager():getItem("STA_BetterHutches.WoodchipsBag"):getUseDelta(),3)
+        local percentPerUse = 1 / ( useDelta * Utils.getSandboxInt("WoodchipsBagAmount"))
+        if woodchipsPresent > (100 - percentPerUse) then
             tooltip.description = getText("Tooltip_STA_BetterHutches_AlreadyHasWoodchips")
             option.toolTip = tooltip
             option.notAvailable = true

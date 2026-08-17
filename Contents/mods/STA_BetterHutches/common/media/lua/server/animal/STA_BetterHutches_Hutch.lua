@@ -22,10 +22,10 @@ end
 
 ---@param hutch IsoHutch
 local function applyWoodChipModifier(hutch)
-    local lastDirtLevel = Utils.getObjectModData(hutch, "lastDirtLevel") or 0 -- 10
+    local lastDirtLevel = Utils.getObjectModData(hutch, "lastDirtLevel") or 0
     local lastDirtAdded = Utils.getObjectModData(hutch, "lastDirtAdded") or 0
     local dirtAdded = hutch:getHutchDirt() - lastDirtLevel
-    local reduction = math.floor(Utils.getSandboxInt("DirtinessReduction") * (Utils.getObjectModData(hutch, "hasWoodChips") / Utils.getSandboxInt("WoodchipsBagAmount")))
+    local reduction = math.floor(Utils.getSandboxInt("DirtinessReduction") * Utils.getObjectModData(hutch, "hasWoodChips") / 100)
 
     if dirtAdded < 0 then
         lastDirtLevel = 0

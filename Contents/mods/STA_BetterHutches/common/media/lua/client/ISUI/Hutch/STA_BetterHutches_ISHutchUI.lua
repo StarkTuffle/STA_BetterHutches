@@ -29,6 +29,9 @@ function ISHutchRoostParentPanel:onWoodchipSelect()
     if luautils.walkAdj(self.chr, self.hutch:getEntrySq()) then
         local item = self.chr:getInventory():getFirstTypeRecurse("STA_BetterHutches.WoodchipsBag")
         ISInventoryPaneContextMenu.transferIfNeeded(self.chr, item)
+        if not self.chr:hasEquipped(item:getFullType()) then
+            ISInventoryPaneContextMenu.equipWeapon(item, true, true, self.chr:getPlayerNum())
+        end
         ISTimedActionQueue.add(STA_BetterHutches_ISAddWoodchipsToHutch:new(self.chr, self.hutch, item))
     end
 end
@@ -50,8 +53,6 @@ function ISHutchRoostParentPanel:render()
     local rowX = PADXY
     local boxY = PADXY + 4 * NEST_BOX_HEIGHT + UI_BORDER_SPACING + 30
     local currentWoodChips = Utils.getObjectModData(self.hutchUI.hutch, "hasWoodChips") or 0
-    local maxWoodChips = Utils.getSandboxInt("WoodchipsBagAmount")
-    local percentWoodChips = currentWoodChips / maxWoodChips
 
     local playerInv = self.hutchUI.chr:getInventory()
     if not playerInv:containsTypeRecurse("STA_BetterHutches.WoodchipsBag") then
@@ -63,13 +64,15 @@ function ISHutchRoostParentPanel:render()
     end
 
     if not self.closedDoorPanel:isVisible() then
-        self:drawProgressBar(rowX + PROGRESS_WIDTH + 10, boxY, PROGRESS_WIDTH, FONT_HGT_SMALL, percentWoodChips, self.hutchUI.fgBar)
-        self:drawText(getText("IGUI_STA_BetterHutches_Woodchips", round(percentWoodChips * 100, 2)), rowX + PROGRESS_WIDTH + 17, boxY, 1,1,1,1, UIFont.NewSmall)
+        local useDelta = round(getScriptManager():getItem("STA_BetterHutches.WoodchipsBag"):getUseDelta(), 3)
+        local percentPerUse = 1 / (useDelta * Utils.getSandboxInt("WoodchipsBagAmount"))
+        self:drawProgressBar(rowX + PROGRESS_WIDTH + 10, boxY, PROGRESS_WIDTH, FONT_HGT_SMALL, currentWoodChips / 100, self.hutchUI.fgBar)
+        self:drawText(getText("IGUI_STA_BetterHutches_Woodchips", math.floor(currentWoodChips)), rowX + PROGRESS_WIDTH + 17, boxY, 1,1,1,1, UIFont.NewSmall)
 
         self.addWoodchipsBtn:setX(rowX + 70)
         self.addWoodchipsBtn:setY(boxY + FONT_HGT_SMALL + 2)
         self.addWoodchipsBtn:setTitle(getText("IGUI_STA_BetterHutches_AddWoodchips"))
-        self.addWoodchipsBtn:setVisible(currentWoodChips < maxWoodChips)
+        self.addWoodchipsBtn:setVisible(currentWoodChips <= (100 - percentPerUse))
     end
 end
 

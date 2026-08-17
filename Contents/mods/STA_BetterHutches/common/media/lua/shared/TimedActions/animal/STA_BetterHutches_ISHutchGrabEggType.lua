@@ -81,16 +81,6 @@ function STA_BetterHutches_ISHutchGrabEggType:animEvent(event, parameter)
                 end
             end
         end
-        --     local egg = self.nestbox:getEgg(self.idx)
-        --     if egg and (egg:isFertilized() == self.fertilized) then
-        --         self.nestbox:removeEgg(self.idx)
-        --         self.hutch:sync()
-        --         addXp(self.character, Perks.Husbandry, 1)
-        --         self.character:getInventory():AddItem(egg)
-        --         sendAddItemToContainer(self.character:getInventory(), egg)
-        --     else
-        --         self.idx = self.idx + 1
-        --     end
     end
 end
 

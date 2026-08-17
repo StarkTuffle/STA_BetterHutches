@@ -4,7 +4,7 @@ local Utils = require "STA_BetterHutches_Utils"
 STA_BetterHutches_ISAddWoodchipsToHutch = ISBaseTimedAction:derive("STA_BetterHutches_ISAddWoodchipsToHutch")
 
 function STA_BetterHutches_ISAddWoodchipsToHutch:isValid()
-    return (self.character:getInventory():containsType("STA_BetterHutches.WoodchipsBag") and (Utils.getObjectModData(self.hutch, "hasWoodChips") or 0) < Utils.getSandboxInt("WoodchipsBagAmount"))
+    return self.hutch ~= nil and self.character:getInventory():containsType("STA_BetterHutches.WoodchipsBag") and (Utils.getObjectModData(self.hutch, "hasWoodChips") or 0) <= (100 - self.percentPerUse)
 end
 
 function STA_BetterHutches_ISAddWoodchipsToHutch:waitToStart()
@@ -12,46 +12,84 @@ function STA_BetterHutches_ISAddWoodchipsToHutch:waitToStart()
     return self.character:shouldBeTurning()
 end
 
+function STA_BetterHutches_ISAddWoodchipsToHutch:addWoodchip()
+    if not self.item or self.item:getCurrentUses() <= 0 then
+        if isServer() then
+            self.netAction:forceComplete()
+        else
+            self:forceStop()
+        end
+        return
+    end
+
+    if self.currentWoodchips >= 100 then
+        if isServer() then
+            self.netAction:forceComplete()
+        else
+            self:forceStop()
+        end
+    end
+
+    self.currentWoodchips = self.currentWoodchips + self.percentPerUse
+    Utils.setObjectModData(self.hutch, "hasWoodChips", self.currentWoodchips)
+    self.item:UseAndSync()
+end
+
 function STA_BetterHutches_ISAddWoodchipsToHutch:update()
     self.character:faceThisObject(self.hutch)
-    self.item:setJobDelta(self:getJobDelta())
+    if not isClient() then
+        self.timer = self.timer + getGameTime():getMultiplier()
+        if math.floor(self.timer / self.timePerWoodchip) > self.lastTimer then
+            self.lastTimer = math.floor(self.timer / self.timePerWoodchip)
+            self:addWoodchip()
+        end
+    end
 end
 
 function STA_BetterHutches_ISAddWoodchipsToHutch:start()
-    self.item:setJobType(getText("IGUI_STA_BetterHutches_JobType_PouringWoodchips"))
     self:setActionAnim("Pour")
 end
 
 function STA_BetterHutches_ISAddWoodchipsToHutch:stop()
-    self.item:setJobDelta(0)
     ISBaseTimedAction.stop(self)
 end
 
 function STA_BetterHutches_ISAddWoodchipsToHutch:perform()
-    self.item:setJobDelta(0)
     ISBaseTimedAction.perform(self)
 end
 
 function STA_BetterHutches_ISAddWoodchipsToHutch:complete()
-    local hutchChipCount = Utils.getObjectModData(self.hutch, "hasWoodChips") or 0
-    Utils.setObjectModData(self.hutch, "hasWoodChips", hutchChipCount + 1)
-    Utils.setObjectModData(self.hutch, "lastDirtLevel", self.hutch:getHutchDirt())
-    -- Remove item and add empty sack
-    sendRemoveItemFromContainer(self.character:getInventory(), self.item)
-    self.character:getInventory():Remove(self.item)
-    local emptySack = self.character:getInventory():AddItem("Base.EmptySandbag")
-    sendAddItemToContainer(self.character:getInventory(), emptySack)
+    self.hutch:sync()
+    return true
+end
+
+function STA_BetterHutches_ISAddWoodchipsToHutch:animEvent(event, parameter)
+    if isServer() then
+        if event == "update" then
+            self:addWoodchip()
+        end
+    end
+end
+
+function STA_BetterHutches_ISAddWoodchipsToHutch:serverStart()
+    local period = self.timePerWoodchip * 20
+    emulateAnimEvent(self.netAction, period, "update", nil)
 end
 
 function STA_BetterHutches_ISAddWoodchipsToHutch:getDuration()
-    if self.character:isTimedActionInstant() then return 1 end
-    return 100
+    return -1
 end
 
 function STA_BetterHutches_ISAddWoodchipsToHutch:new(character, hutch, item)
     local o = ISBaseTimedAction.new(self, character)
     o.hutch = hutch
     o.item = item
+    o.currentWoodchips = Utils.getObjectModData(hutch, "hasWoodChips") or 0
+    o.timer = 0
+    o.lastTimer = 0
+    o.timePerWoodchip = 20
+    o.bagsToFill = Utils.getSandboxInt("WoodchipsBagAmount")
+    o.percentPerUse = 100 / (item:getMaxUses() * o.bagsToFill)
     o.maxTime = o:getDuration()
     return o
 end
