@@ -49,3 +49,6 @@
     NOTE: Check your hutches, the change will reduce woodchip count after update
 - Added Brazilian Portuguese translation (Thank you Leozimmelo)
 [ ------ ]
+[ Version 1.2.1 ]
+- Fixed dirtiness increasing when hutch is under 10% woodchips
+[ ------ ]
