@@ -11,6 +11,7 @@ module STA_BetterHutches
         ItemType = base:drainable,
         Weight = 4.0,
         Icon = Sandbag,
+        ConditionMax = 1,
         ReplaceInPrimaryHand = Bag_Sandbag_RHand holdingbagright,
         ReplaceInSecondHand = Bag_Sandbag_LHand holdingbagleft,
         ReplaceOnDeplete = Base.EmptySandbag,
