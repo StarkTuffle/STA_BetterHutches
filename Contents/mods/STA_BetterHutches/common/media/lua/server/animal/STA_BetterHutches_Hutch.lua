@@ -25,7 +25,7 @@ local function applyWoodChipModifier(hutch)
     local lastDirtLevel = Utils.getObjectModData(hutch, "lastDirtLevel") or 0
     local lastDirtAdded = Utils.getObjectModData(hutch, "lastDirtAdded") or 0
     local dirtAdded = hutch:getHutchDirt() - lastDirtLevel
-    local reduction = math.floor(Utils.getSandboxInt("DirtinessReduction") * Utils.getObjectModData(hutch, "hasWoodChips") / 100)
+    local reduction = math.max(1, math.floor(Utils.getSandboxInt("DirtinessReduction") * (Utils.getObjectModData(hutch, "hasWoodChips") / 10)) / 10)
 
     if dirtAdded < 0 then
         lastDirtLevel = 0
