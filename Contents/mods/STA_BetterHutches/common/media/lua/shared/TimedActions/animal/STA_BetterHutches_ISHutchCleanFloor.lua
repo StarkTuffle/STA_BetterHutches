@@ -10,7 +10,8 @@ function ISHutchCleanFloor:clean()
         cleanForce = 2
     end
 
-    local woodchips = Utils.getObjectModData(self.hutch, "hasWoodChips") - cleanForce
+    local woodchips = Utils.getObjectModData(self.hutch, "hasWoodChips")
+    woodchips = woodchips and (woodchips - cleanForce) or 0
     if woodchips < 0 then
         woodchips = 0
     end
